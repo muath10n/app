@@ -13,9 +13,10 @@ def predict(input_dataframe: pd.DataFrame):
     y_test_predicted_inj = model.predict(input_dataframe.values)
     with st.container():
         st.header("Output")
-        if len(y_test_predicted_inj) == 1:
-            output = 'injured' if y_test_predicted_inj[0] == 1 else 'Non-injured'
-            st.write(f"The predicted output is '{output}'")
+        st.write(f"The injurity severity is '{y_test_predicted_inj[0]}'")
+        #if len(y_test_predicted_inj) == 1:
+        #    output = 'injured' if y_test_predicted_inj[0] == 1 else 'Non-injured'
+        #    st.write(f"The injurity severity is '{y_test_predicted_inj[0]}'")
 
 st.title('Machine learning on traffic accident dataset')
 st.write ("This is an app for predicting a person's injury after an accident.")
